@@ -215,6 +215,10 @@ The latency of handling messages in us.
 | ----- | ------ |
 | `op   ` | `13, 14, 15, 16, 23, 24, 25, 26, 27, 28, 5, 7` |
 
+### `tetragon_host_procfs_valid`
+
+Whether the configured procfs exposes the host PID namespace (1 for valid, 0 for invalid).
+
 ### `tetragon_map_capacity`
 
 Capacity of a BPF map. Expected to be constant.

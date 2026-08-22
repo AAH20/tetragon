@@ -399,7 +399,10 @@ func tetragonExecuteCtx(ctx context.Context, cancel context.CancelFunc, ready fu
 	if err != nil {
 		logger.Fatal(log, "Failed to initialize host namespaces", "procfs", option.Config.ProcFS, logfields.Error, err)
 	}
-	checkProcFS()
+	if err := checkProcFS(); err != nil {
+		log.Error("Process attribution prerequisite check failed; tracing events may be missing process metadata",
+			logfields.Error, err)
+	}
 	// Setup file system mounts
 	bpf.CheckOrMountFS("")
 	bpf.CheckOrMountTraceFS()

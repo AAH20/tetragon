@@ -44,8 +44,8 @@ func initHostNamespaces() error {
 	return err
 }
 
-func checkProcFS() {
-	checkprocfs.Check()
+func checkProcFS() error {
+	return checkprocfs.Check()
 }
 
 func initCachedBTF(lib, btfString string) error {

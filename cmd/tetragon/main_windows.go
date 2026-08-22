@@ -10,8 +10,8 @@ func initHostNamespaces() error {
 	return nil
 }
 
-func checkProcFS() {
-
+func checkProcFS() error {
+	return nil
 }
 
 func initCachedBTF(_, _ string) error {
